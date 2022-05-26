@@ -3,6 +3,11 @@ class PassiveMoney:
         self.money = money
         self.category = category
         self.memo = memo
+        self.start = start_date
+        self.end = end_date
+        self.frequency = frequency
+        self.count = count
 
     def is_negative():
         pass
+
