@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>850</height>
+    <width>420</width>
+    <height>860</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>401</width>
-      <height>751</height>
+      <height>741</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -79,6 +79,19 @@
              </widget>
             </item>
             <item>
+             <widget class="QLabel" name="label_incomeAmount">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QLabel" name="label_currentExpense">
               <property name="font">
                <font>
@@ -93,6 +106,19 @@
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_expenseAmount">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>0.0</string>
               </property>
              </widget>
             </item>
@@ -150,6 +176,16 @@
           </item>
           <item>
            <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Amount</string>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_4">
               <property name="text">
@@ -159,16 +195,6 @@
             </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="lineEdit"/>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>Amount</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_2"/>
             </item>
            </layout>
           </item>
@@ -192,31 +218,31 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>750</y>
+      <x>10</x>
+      <y>760</y>
       <width>401</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pb_home">
        <property name="text">
         <string>Home</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pb_input">
        <property name="text">
         <string>Input</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="pb_history">
        <property name="text">
-        <string>Graph</string>
+        <string>History</string>
        </property>
       </widget>
      </item>
@@ -228,7 +254,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>420</width>
      <height>21</height>
     </rect>
    </property>
