@@ -12,5 +12,10 @@ class Money:
     def get_satang(self):
         return self.satang
     
+    def deposit(self, transaction_money):
+        self.baht += transaction_money.get_baht()
+        self.satang += transaction_money.get_satang()
     
-        
+    def withdraw(self, transaction_money):
+        self.baht -= transaction_money.get_baht()
+        self.satang -= transaction_money.get_satang()

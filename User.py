@@ -1,7 +1,9 @@
+import money
+
 class User:
     def __init__(self, name):
         self.name = name
-        self.balance = Money(0, 0)
+        self.balance = money.Money(0, 0)
 
     def get_name(self):
         return self.name

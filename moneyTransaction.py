@@ -1,8 +1,8 @@
 import money
 
 class MoneyTransaction:
-    def __init__(self, baht, satang, transactionType, category, memo):
-        self.money = money.Money(baht, satang)
+    def __init__(self, money, transactionType, category, memo):
+        self.money = money
         self.transactin_type = transactionType
         self.category = category
         self.memo = memo
