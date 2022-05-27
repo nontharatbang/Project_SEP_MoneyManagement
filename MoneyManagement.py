@@ -132,12 +132,16 @@ class MoneyManagement(QMainWindow):
            for key in self.root:
                 if(key[:4] == year):
                     self.ui.listWidget_history.addItem(key[:19] + ' ' + str(self.root[key]))
+                else:
+                    if(key[:4].isnumeric()):
+                        self.ui.label_search_error.setText('Information not found!')
         else:
             for key in self.root:
-                if(key[:7] == (year + ':' + month)):
+                if(key[:7] == (year + '-' + month) or key[:7] == (year + '-0' + month)):
                     self.ui.listWidget_history.addItem(key[:19] + ' ' + str(self.root[key]))
-        print(month)
-
+                else:
+                    if(key[:4].isnumeric()):
+                        self.ui.label_search_error.setText('Information not found!')
         
 
 

@@ -1,4 +1,6 @@
-class Money:
+import persistent
+
+class Money(persistent.Persistent):
     def __init__(self, baht, satang):
         self.baht = baht
         self.satang = satang

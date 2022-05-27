@@ -1,6 +1,7 @@
 import money
+import persistent
 
-class User:
+class User(persistent.Persistent):
     def __init__(self, name):
         self.name = name
         self.balance = money.Money(0, 0)

@@ -1,6 +1,7 @@
 import money
+import persistent
 
-class MoneyTransaction:
+class MoneyTransaction(persistent.Persistent):
     def __init__(self, money, transactionType, category, memo):
         self.money = money
         self.transactin_type = transactionType
