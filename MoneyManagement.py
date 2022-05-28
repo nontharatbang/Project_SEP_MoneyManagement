@@ -74,8 +74,6 @@ class MoneyManagement(QMainWindow):
         #set background
         self.setStyleSheet('background-image: url("C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/stripe.png")')
 
-        print(self.passiveRoot.items())
-
     def change_page(self):
         sender = self.sender().objectName()
         if(sender == 'pb_home'):
@@ -151,12 +149,6 @@ class MoneyManagement(QMainWindow):
         category = self.passiveRoot[key].get_category()
         memo = self.passiveRoot[key].get_memo()
 
-        print('In update passive continue')
-        print(transaction_money)
-        print(transaction_type)
-        print(category)
-        print(memo)
-
         if(transaction_type == 'Income'):
             self.update_current_income(transaction_money)
         elif(transaction_type == 'Expense'):
@@ -193,26 +185,17 @@ class MoneyManagement(QMainWindow):
                 self.ui.listWidget_today.addItem(str(self.root[key]))
 
     def update_passiveMoney(self):
-        
-        print('in update_passiveMoney')
-        print(self.passiveRoot.items())
         delKey = []
         for key in self.passiveRoot:
             if(self.passiveRoot[key].get_endDate() == self.today):
                 self.delList.append(key)
 
-        print(delKey)
         for key in delKey:
             del self.passiveRoot[key]
         delKey.clear()
-        print('after clear')
-        print(delKey)
-        print(self.passiveRoot.items())
 
         for pMoney in self.passiveRoot:
-            print('looping for update nextDate')
             if(self.passiveRoot[pMoney].get_nextDate() == self.today):
-                print('how da heck did u get inside')
                 self.passiveRoot[pMoney].update_nextDate()
                 self.add_passive_continue(pMoney)
 
