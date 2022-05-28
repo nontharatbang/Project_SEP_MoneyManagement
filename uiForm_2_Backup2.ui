@@ -14,9 +14,6 @@
    <string>Money Management</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string notr="true">background: transparent</string>
-   </property>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
@@ -101,9 +98,6 @@
                 <weight>75</weight>
                 <bold>true</bold>
                </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background: transparent</string>
               </property>
               <property name="text">
                <string>Income: ฿</string>
@@ -202,12 +196,7 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+          <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
          </property>
         </widget>
        </widget>
@@ -261,12 +250,7 @@ border-style: outset;
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string/>
@@ -332,12 +316,7 @@ border-style: outset;
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
              </widget>
             </item>
@@ -375,12 +354,7 @@ border-style: outset;
                <bool>false</bool>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string/>
@@ -423,12 +397,7 @@ border-style: outset;
              <bool>true</bool>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
             </property>
            </widget>
           </item>
@@ -459,12 +428,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string>Income</string>
@@ -480,12 +444,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string>Expense</string>
@@ -508,12 +467,6 @@ border-style: outset;
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QLabel" name="label_optional">
-            <property name="font">
-             <font>
-              <family>Calibri</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
             <property name="text">
              <string>(Optional)</string>
             </property>
@@ -524,19 +477,8 @@ border-style: outset;
           </item>
           <item>
            <widget class="QPushButton" name="pb_addPassive">
-            <property name="font">
-             <font>
-              <family>Calibri</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
             </property>
             <property name="text">
              <string>Add Passive Money</string>
@@ -624,15 +566,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
              </widget>
             </item>
@@ -651,12 +585,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string/>
@@ -685,12 +614,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string/>
@@ -705,19 +629,8 @@ border-style: outset;
             </item>
             <item row="4" column="1">
              <widget class="QDateEdit" name="dateEdit_endDate">
-              <property name="font">
-               <font>
-                <family>Calibri</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -748,12 +661,6 @@ border-style: outset;
             </item>
             <item row="4" column="0">
              <widget class="QLabel" name="label_endDate">
-              <property name="font">
-               <font>
-                <family>Calibri</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
               <property name="text">
                <string>End Date(year-month-day)</string>
               </property>
@@ -764,12 +671,6 @@ border-style: outset;
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="label_title">
-              <property name="font">
-               <font>
-                <family>Calibri</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
               <property name="text">
                <string>Title</string>
               </property>
@@ -786,19 +687,8 @@ border-style: outset;
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="font">
-               <font>
-                <family>Calibri</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -818,17 +708,6 @@ border-style: outset;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="font">
-             <font>
-              <family>Calibri</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border-style: no-border
-;
-</string>
-            </property>
             <property name="title">
              <string/>
             </property>
@@ -840,12 +719,6 @@ border-style: outset;
                <width>82</width>
                <height>17</height>
               </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Calibri</family>
-               <pointsize>12</pointsize>
-              </font>
              </property>
              <property name="text">
               <string>Monthly</string>
@@ -860,12 +733,6 @@ border-style: outset;
                <height>17</height>
               </rect>
              </property>
-             <property name="font">
-              <font>
-               <family>Calibri</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
              <property name="text">
               <string>Annually</string>
              </property>
@@ -878,12 +745,6 @@ border-style: outset;
                <width>91</width>
                <height>16</height>
               </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Calibri</family>
-               <pointsize>12</pointsize>
-              </font>
              </property>
              <property name="text">
               <string>Frequency:</string>
@@ -916,12 +777,7 @@ border-style: outset;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
             </property>
            </widget>
           </item>
@@ -952,12 +808,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string>Income</string>
@@ -973,12 +824,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
               <property name="text">
                <string>Expense</string>
@@ -1052,12 +898,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
              </widget>
             </item>
@@ -1092,12 +933,7 @@ border-style: outset;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+               <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
               </property>
              </widget>
             </item>
@@ -1128,12 +964,7 @@ border-style: outset;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
             </property>
             <property name="text">
              <string>Search</string>
@@ -1158,12 +989,7 @@ border-style: outset;
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+             <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
             </property>
            </widget>
           </item>
@@ -1193,12 +1019,7 @@ border-style: outset;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
        </property>
        <property name="text">
         <string>Home</string>
@@ -1214,12 +1035,7 @@ border-style: outset;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
        </property>
        <property name="text">
         <string>Input</string>
@@ -1235,12 +1051,7 @@ border-style: outset;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;);
-border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 1px;</string>
+        <string notr="true">background-image: url(&quot;C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png&quot;)</string>
        </property>
        <property name="text">
         <string>History</string>

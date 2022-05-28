@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
-    QLineEdit, QListWidget, QListWidgetItem, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QStackedWidget,
+from PySide6.QtWidgets import (QApplication, QDateEdit, QDateTimeEdit, QGridLayout,
+    QGroupBox, QHBoxLayout, QLabel, QLineEdit,
+    QListWidget, QListWidgetItem, QMainWindow, QMenuBar,
+    QPushButton, QRadioButton, QSizePolicy, QStackedWidget,
     QStatusBar, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
@@ -27,6 +28,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(400, 850)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"background: transparent")
         self.verticalLayoutWidget_3 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
         self.verticalLayoutWidget_3.setGeometry(QRect(0, 0, 401, 751))
@@ -39,6 +41,7 @@ class Ui_MainWindow(object):
         font.setFamilies([u"Calibri"])
         font.setPointSize(12)
         self.stackedWidget.setFont(font)
+        self.stackedWidget.setStyleSheet(u"background: transparent")
         self.page_1 = QWidget()
         self.page_1.setObjectName(u"page_1")
         self.verticalLayoutWidget = QWidget(self.page_1)
@@ -79,6 +82,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(12)
         font2.setBold(True)
         self.label_currentIncome.setFont(font2)
+        self.label_currentIncome.setStyleSheet(u"background: transparent")
         self.label_currentIncome.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.label_currentIncome.setIndent(10)
 
@@ -122,6 +126,12 @@ class Ui_MainWindow(object):
         self.listWidget_today.setObjectName(u"listWidget_today")
         self.listWidget_today.setGeometry(QRect(10, 210, 381, 531))
         self.listWidget_today.setFont(font)
+        self.listWidget_today.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
         self.stackedWidget.addWidget(self.page_1)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
@@ -152,7 +162,15 @@ class Ui_MainWindow(object):
         font3.setPointSize(12)
         font3.setKerning(True)
         self.lineEdit_amountBaht.setFont(font3)
+        self.lineEdit_amountBaht.setAutoFillBackground(False)
+        self.lineEdit_amountBaht.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
         self.lineEdit_amountBaht.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.lineEdit_amountBaht.setReadOnly(False)
 
         self.gridLayout_6.addWidget(self.lineEdit_amountBaht, 0, 1, 1, 1)
 
@@ -175,6 +193,13 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.lineEdit_category.sizePolicy().hasHeightForWidth())
         self.lineEdit_category.setSizePolicy(sizePolicy)
         self.lineEdit_category.setFont(font)
+        self.lineEdit_category.setAutoFillBackground(False)
+        self.lineEdit_category.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.gridLayout_6.addWidget(self.lineEdit_category, 2, 1, 1, 1)
 
@@ -190,6 +215,13 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.lineEdit_amountSatang.sizePolicy().hasHeightForWidth())
         self.lineEdit_amountSatang.setSizePolicy(sizePolicy)
         self.lineEdit_amountSatang.setFont(font)
+        self.lineEdit_amountSatang.setAutoFillBackground(False)
+        self.lineEdit_amountSatang.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
         self.lineEdit_amountSatang.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.gridLayout_6.addWidget(self.lineEdit_amountSatang, 1, 1, 1, 1)
@@ -207,6 +239,13 @@ class Ui_MainWindow(object):
         self.textEdit_memo = QTextEdit(self.verticalLayoutWidget_2)
         self.textEdit_memo.setObjectName(u"textEdit_memo")
         self.textEdit_memo.setFont(font)
+        self.textEdit_memo.setAutoFillBackground(True)
+        self.textEdit_memo.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.p2_vBoxLayout.addWidget(self.textEdit_memo)
 
@@ -222,19 +261,267 @@ class Ui_MainWindow(object):
         self.pb_income = QPushButton(self.verticalLayoutWidget_2)
         self.pb_income.setObjectName(u"pb_income")
         self.pb_income.setFont(font)
+        self.pb_income.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.horizontalLayout.addWidget(self.pb_income)
 
         self.pb_expense = QPushButton(self.verticalLayoutWidget_2)
         self.pb_expense.setObjectName(u"pb_expense")
         self.pb_expense.setFont(font)
+        self.pb_expense.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.horizontalLayout.addWidget(self.pb_expense)
 
 
         self.p2_vBoxLayout.addLayout(self.horizontalLayout)
 
+        self.horizontalLayoutWidget_2 = QWidget(self.page_2)
+        self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
+        self.horizontalLayoutWidget_2.setGeometry(QRect(10, 630, 381, 73))
+        self.horizontalLayout_4 = QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_optional = QLabel(self.horizontalLayoutWidget_2)
+        self.label_optional.setObjectName(u"label_optional")
+        self.label_optional.setFont(font)
+        self.label_optional.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_4.addWidget(self.label_optional)
+
+        self.pb_addPassive = QPushButton(self.horizontalLayoutWidget_2)
+        self.pb_addPassive.setObjectName(u"pb_addPassive")
+        self.pb_addPassive.setFont(font)
+        self.pb_addPassive.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+
+        self.horizontalLayout_4.addWidget(self.pb_addPassive)
+
         self.stackedWidget.addWidget(self.page_2)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.verticalLayoutWidget_5 = QWidget(self.page_4)
+        self.verticalLayoutWidget_5.setObjectName(u"verticalLayoutWidget_5")
+        self.verticalLayoutWidget_5.setGeometry(QRect(10, 20, 381, 581))
+        self.p2_vBoxLayout_2 = QVBoxLayout(self.verticalLayoutWidget_5)
+        self.p2_vBoxLayout_2.setObjectName(u"p2_vBoxLayout_2")
+        self.p2_vBoxLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.label_passiveMoney = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveMoney.setObjectName(u"label_passiveMoney")
+        self.label_passiveMoney.setFont(font1)
+        self.label_passiveMoney.setAlignment(Qt.AlignCenter)
+
+        self.p2_vBoxLayout_2.addWidget(self.label_passiveMoney)
+
+        self.gridLayout_7 = QGridLayout()
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.label_passiveCategory = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveCategory.setObjectName(u"label_passiveCategory")
+        self.label_passiveCategory.setFont(font)
+        self.label_passiveCategory.setIndent(10)
+
+        self.gridLayout_7.addWidget(self.label_passiveCategory, 3, 0, 1, 1)
+
+        self.label_passiveBaht = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveBaht.setObjectName(u"label_passiveBaht")
+        self.label_passiveBaht.setFont(font)
+        self.label_passiveBaht.setIndent(10)
+
+        self.gridLayout_7.addWidget(self.label_passiveBaht, 1, 0, 1, 1)
+
+        self.lineEdit_passiveCategory = QLineEdit(self.verticalLayoutWidget_5)
+        self.lineEdit_passiveCategory.setObjectName(u"lineEdit_passiveCategory")
+        sizePolicy.setHeightForWidth(self.lineEdit_passiveCategory.sizePolicy().hasHeightForWidth())
+        self.lineEdit_passiveCategory.setSizePolicy(sizePolicy)
+        self.lineEdit_passiveCategory.setFont(font)
+        self.lineEdit_passiveCategory.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.lineEdit_passiveCategory.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.lineEdit_passiveCategory, 3, 1, 1, 1)
+
+        self.lineEdit_passiveSatang = QLineEdit(self.verticalLayoutWidget_5)
+        self.lineEdit_passiveSatang.setObjectName(u"lineEdit_passiveSatang")
+        sizePolicy.setHeightForWidth(self.lineEdit_passiveSatang.sizePolicy().hasHeightForWidth())
+        self.lineEdit_passiveSatang.setSizePolicy(sizePolicy)
+        self.lineEdit_passiveSatang.setFont(font)
+        self.lineEdit_passiveSatang.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.lineEdit_passiveSatang.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.lineEdit_passiveSatang, 2, 1, 1, 1)
+
+        self.lineEdit_passiveBaht = QLineEdit(self.verticalLayoutWidget_5)
+        self.lineEdit_passiveBaht.setObjectName(u"lineEdit_passiveBaht")
+        sizePolicy.setHeightForWidth(self.lineEdit_passiveBaht.sizePolicy().hasHeightForWidth())
+        self.lineEdit_passiveBaht.setSizePolicy(sizePolicy)
+        self.lineEdit_passiveBaht.setFont(font3)
+        self.lineEdit_passiveBaht.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.lineEdit_passiveBaht.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.lineEdit_passiveBaht, 1, 1, 1, 1)
+
+        self.dateEdit_endDate = QDateEdit(self.verticalLayoutWidget_5)
+        self.dateEdit_endDate.setObjectName(u"dateEdit_endDate")
+        self.dateEdit_endDate.setFont(font)
+        self.dateEdit_endDate.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.dateEdit_endDate.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.dateEdit_endDate.setCurrentSection(QDateTimeEdit.YearSection)
+
+        self.gridLayout_7.addWidget(self.dateEdit_endDate, 4, 1, 1, 1)
+
+        self.label_passiveSatang = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveSatang.setObjectName(u"label_passiveSatang")
+        self.label_passiveSatang.setFont(font)
+        self.label_passiveSatang.setIndent(10)
+
+        self.gridLayout_7.addWidget(self.label_passiveSatang, 2, 0, 1, 1)
+
+        self.label_endDate = QLabel(self.verticalLayoutWidget_5)
+        self.label_endDate.setObjectName(u"label_endDate")
+        self.label_endDate.setFont(font)
+        self.label_endDate.setIndent(10)
+
+        self.gridLayout_7.addWidget(self.label_endDate, 4, 0, 1, 1)
+
+        self.label_title = QLabel(self.verticalLayoutWidget_5)
+        self.label_title.setObjectName(u"label_title")
+        self.label_title.setFont(font)
+        self.label_title.setIndent(10)
+
+        self.gridLayout_7.addWidget(self.label_title, 0, 0, 1, 1)
+
+        self.lineEdit_title = QLineEdit(self.verticalLayoutWidget_5)
+        self.lineEdit_title.setObjectName(u"lineEdit_title")
+        sizePolicy.setHeightForWidth(self.lineEdit_title.sizePolicy().hasHeightForWidth())
+        self.lineEdit_title.setSizePolicy(sizePolicy)
+        self.lineEdit_title.setFont(font)
+        self.lineEdit_title.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.lineEdit_title.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.lineEdit_title, 0, 1, 1, 1)
+
+
+        self.p2_vBoxLayout_2.addLayout(self.gridLayout_7)
+
+        self.groupBox_frequency = QGroupBox(self.verticalLayoutWidget_5)
+        self.groupBox_frequency.setObjectName(u"groupBox_frequency")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.MinimumExpanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.groupBox_frequency.sizePolicy().hasHeightForWidth())
+        self.groupBox_frequency.setSizePolicy(sizePolicy1)
+        self.groupBox_frequency.setFont(font)
+        self.groupBox_frequency.setStyleSheet(u"border-style: no-border\n"
+";\n"
+"")
+        self.rb_monthly = QRadioButton(self.groupBox_frequency)
+        self.rb_monthly.setObjectName(u"rb_monthly")
+        self.rb_monthly.setGeometry(QRect(10, 40, 82, 17))
+        self.rb_monthly.setFont(font)
+        self.rb_annually = QRadioButton(self.groupBox_frequency)
+        self.rb_annually.setObjectName(u"rb_annually")
+        self.rb_annually.setGeometry(QRect(10, 70, 82, 17))
+        self.rb_annually.setFont(font)
+        self.label_frequency = QLabel(self.groupBox_frequency)
+        self.label_frequency.setObjectName(u"label_frequency")
+        self.label_frequency.setGeometry(QRect(10, 10, 91, 16))
+        self.label_frequency.setFont(font)
+
+        self.p2_vBoxLayout_2.addWidget(self.groupBox_frequency)
+
+        self.label_passiveMemo = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveMemo.setObjectName(u"label_passiveMemo")
+        self.label_passiveMemo.setFont(font)
+        self.label_passiveMemo.setIndent(10)
+
+        self.p2_vBoxLayout_2.addWidget(self.label_passiveMemo)
+
+        self.textEdit_passiveMemo = QTextEdit(self.verticalLayoutWidget_5)
+        self.textEdit_passiveMemo.setObjectName(u"textEdit_passiveMemo")
+        self.textEdit_passiveMemo.setFont(font)
+        self.textEdit_passiveMemo.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+
+        self.p2_vBoxLayout_2.addWidget(self.textEdit_passiveMemo)
+
+        self.label_passiveError = QLabel(self.verticalLayoutWidget_5)
+        self.label_passiveError.setObjectName(u"label_passiveError")
+        self.label_passiveError.setFont(font)
+        self.label_passiveError.setAlignment(Qt.AlignCenter)
+
+        self.p2_vBoxLayout_2.addWidget(self.label_passiveError)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.pb_passiveIncome = QPushButton(self.verticalLayoutWidget_5)
+        self.pb_passiveIncome.setObjectName(u"pb_passiveIncome")
+        self.pb_passiveIncome.setFont(font)
+        self.pb_passiveIncome.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+
+        self.horizontalLayout_5.addWidget(self.pb_passiveIncome)
+
+        self.pb_passiveExpense = QPushButton(self.verticalLayoutWidget_5)
+        self.pb_passiveExpense.setObjectName(u"pb_passiveExpense")
+        self.pb_passiveExpense.setFont(font)
+        self.pb_passiveExpense.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+
+        self.horizontalLayout_5.addWidget(self.pb_passiveExpense)
+
+
+        self.p2_vBoxLayout_2.addLayout(self.horizontalLayout_5)
+
+        self.stackedWidget.addWidget(self.page_4)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
         self.verticalLayoutWidget_4 = QWidget(self.page_3)
@@ -264,6 +551,12 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.lineEdit_year.sizePolicy().hasHeightForWidth())
         self.lineEdit_year.setSizePolicy(sizePolicy)
         self.lineEdit_year.setFont(font)
+        self.lineEdit_year.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.gridLayout.addWidget(self.lineEdit_year, 0, 1, 1, 1)
 
@@ -279,6 +572,12 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.lineEdit_month.sizePolicy().hasHeightForWidth())
         self.lineEdit_month.setSizePolicy(sizePolicy)
         self.lineEdit_month.setFont(font)
+        self.lineEdit_month.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.gridLayout.addWidget(self.lineEdit_month, 1, 1, 1, 1)
 
@@ -295,93 +594,30 @@ class Ui_MainWindow(object):
         self.pb_search = QPushButton(self.verticalLayoutWidget_4)
         self.pb_search.setObjectName(u"pb_search")
         self.pb_search.setFont(font)
+        self.pb_search.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
+        self.pb_search.setAutoDefault(False)
+        self.pb_search.setFlat(False)
 
         self.verticalLayout.addWidget(self.pb_search)
 
         self.listWidget_history = QListWidget(self.verticalLayoutWidget_4)
         self.listWidget_history.setObjectName(u"listWidget_history")
         self.listWidget_history.setFont(font)
+        self.listWidget_history.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.verticalLayout.addWidget(self.listWidget_history)
 
         self.stackedWidget.addWidget(self.page_3)
-        self.page_4 = QWidget()
-        self.page_4.setObjectName(u"page_4")
-        self.verticalLayoutWidget_5 = QWidget(self.page_4)
-        self.verticalLayoutWidget_5.setObjectName(u"verticalLayoutWidget_5")
-        self.verticalLayoutWidget_5.setGeometry(QRect(10, 20, 381, 101))
-        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_5)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_typeDetail = QLabel(self.verticalLayoutWidget_5)
-        self.label_typeDetail.setObjectName(u"label_typeDetail")
-        self.label_typeDetail.setFont(font1)
-        self.label_typeDetail.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
-
-        self.verticalLayout_2.addWidget(self.label_typeDetail)
-
-        self.label_dateDetail = QLabel(self.verticalLayoutWidget_5)
-        self.label_dateDetail.setObjectName(u"label_dateDetail")
-        font4 = QFont()
-        font4.setFamilies([u"Calibri"])
-        font4.setPointSize(14)
-        font4.setBold(True)
-        self.label_dateDetail.setFont(font4)
-        self.label_dateDetail.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-
-        self.verticalLayout_2.addWidget(self.label_dateDetail)
-
-        self.gridLayoutWidget_2 = QWidget(self.page_4)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(10, 140, 379, 361))
-        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_memoDetail = QLabel(self.gridLayoutWidget_2)
-        self.label_memoDetail.setObjectName(u"label_memoDetail")
-        self.label_memoDetail.setFont(font2)
-        self.label_memoDetail.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.label_memoDetail.setMargin(15)
-
-        self.gridLayout_2.addWidget(self.label_memoDetail, 2, 0, 1, 1)
-
-        self.label_moneyDetail = QLabel(self.gridLayoutWidget_2)
-        self.label_moneyDetail.setObjectName(u"label_moneyDetail")
-        self.label_moneyDetail.setFont(font2)
-        self.label_moneyDetail.setMargin(15)
-
-        self.gridLayout_2.addWidget(self.label_moneyDetail, 0, 0, 1, 1)
-
-        self.label_categoryDetail = QLabel(self.gridLayoutWidget_2)
-        self.label_categoryDetail.setObjectName(u"label_categoryDetail")
-        self.label_categoryDetail.setFont(font2)
-        self.label_categoryDetail.setMargin(15)
-
-        self.gridLayout_2.addWidget(self.label_categoryDetail, 1, 0, 1, 1)
-
-        self.label_moneyDetailAmount = QLabel(self.gridLayoutWidget_2)
-        self.label_moneyDetailAmount.setObjectName(u"label_moneyDetailAmount")
-        self.label_moneyDetailAmount.setFont(font)
-        self.label_moneyDetailAmount.setAlignment(Qt.AlignCenter)
-        self.label_moneyDetailAmount.setMargin(15)
-
-        self.gridLayout_2.addWidget(self.label_moneyDetailAmount, 0, 1, 1, 1)
-
-        self.label_categoryDetailAmount = QLabel(self.gridLayoutWidget_2)
-        self.label_categoryDetailAmount.setObjectName(u"label_categoryDetailAmount")
-        self.label_categoryDetailAmount.setFont(font)
-        self.label_categoryDetailAmount.setAlignment(Qt.AlignCenter)
-        self.label_categoryDetailAmount.setMargin(15)
-
-        self.gridLayout_2.addWidget(self.label_categoryDetailAmount, 1, 1, 1, 1)
-
-        self.textEdit_memoDetail = QTextEdit(self.gridLayoutWidget_2)
-        self.textEdit_memoDetail.setObjectName(u"textEdit_memoDetail")
-        self.textEdit_memoDetail.setFont(font)
-
-        self.gridLayout_2.addWidget(self.textEdit_memoDetail, 2, 1, 1, 1)
-
-        self.stackedWidget.addWidget(self.page_4)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
 
@@ -394,18 +630,36 @@ class Ui_MainWindow(object):
         self.pb_home = QPushButton(self.horizontalLayoutWidget)
         self.pb_home.setObjectName(u"pb_home")
         self.pb_home.setFont(font)
+        self.pb_home.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.horizontalLayout_6.addWidget(self.pb_home)
 
         self.pb_input = QPushButton(self.horizontalLayoutWidget)
         self.pb_input.setObjectName(u"pb_input")
         self.pb_input.setFont(font)
+        self.pb_input.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.horizontalLayout_6.addWidget(self.pb_input)
 
         self.pb_history = QPushButton(self.horizontalLayoutWidget)
         self.pb_history.setObjectName(u"pb_history")
         self.pb_history.setFont(font)
+        self.pb_history.setStyleSheet(u"background-image: url(\"C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/white.png\");\n"
+"border-style: outset;\n"
+"    border-width: 1px;\n"
+"    border-radius: 10px;\n"
+"    border-color: black;\n"
+"    padding: 1px;")
 
         self.horizontalLayout_6.addWidget(self.pb_history)
 
@@ -420,7 +674,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
+        self.pb_search.setDefault(False)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -430,33 +685,50 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Money Management", None))
         self.label_savingBalance.setText(QCoreApplication.translate("MainWindow", u"Saving Balance: \u0e3f", None))
         self.label_balanceAmount.setText(QCoreApplication.translate("MainWindow", u"0.00", None))
-        self.label_currentIncome.setText(QCoreApplication.translate("MainWindow", u"Income:", None))
+        self.label_currentIncome.setText(QCoreApplication.translate("MainWindow", u"Income: \u0e3f", None))
         self.label_currentIncomeAmount.setText(QCoreApplication.translate("MainWindow", u"0.00", None))
-        self.label_currentExpense.setText(QCoreApplication.translate("MainWindow", u"Expense:", None))
+        self.label_currentExpense.setText(QCoreApplication.translate("MainWindow", u"Expense: \u0e3f", None))
         self.label_currentExpenseAmount.setText(QCoreApplication.translate("MainWindow", u"0.00", None))
         self.label_today.setText(QCoreApplication.translate("MainWindow", u"Today:", None))
         self.label_transaction.setText(QCoreApplication.translate("MainWindow", u"Transaction", None))
-        self.lineEdit_amountBaht.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.lineEdit_amountBaht.setText("")
+        self.lineEdit_amountBaht.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_category.setText(QCoreApplication.translate("MainWindow", u"Category", None))
         self.label_amountBaht.setText(QCoreApplication.translate("MainWindow", u"Amount(Baht)", None))
         self.label_amountSatang.setText(QCoreApplication.translate("MainWindow", u"Amount(Satang)", None))
-        self.lineEdit_amountSatang.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.lineEdit_amountSatang.setText("")
+        self.lineEdit_amountSatang.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_memo.setText(QCoreApplication.translate("MainWindow", u"Memo", None))
         self.label_error.setText("")
         self.pb_income.setText(QCoreApplication.translate("MainWindow", u"Income", None))
         self.pb_expense.setText(QCoreApplication.translate("MainWindow", u"Expense", None))
+        self.label_optional.setText(QCoreApplication.translate("MainWindow", u"(Optional)", None))
+        self.pb_addPassive.setText(QCoreApplication.translate("MainWindow", u"Add Passive Money", None))
+        self.label_passiveMoney.setText(QCoreApplication.translate("MainWindow", u"Passive Money", None))
+        self.label_passiveCategory.setText(QCoreApplication.translate("MainWindow", u"Category", None))
+        self.label_passiveBaht.setText(QCoreApplication.translate("MainWindow", u"Amount(Baht)", None))
+        self.lineEdit_passiveSatang.setText("")
+        self.lineEdit_passiveSatang.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.lineEdit_passiveBaht.setText("")
+        self.lineEdit_passiveBaht.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.dateEdit_endDate.setDisplayFormat(QCoreApplication.translate("MainWindow", u"yyyy-M-d", None))
+        self.label_passiveSatang.setText(QCoreApplication.translate("MainWindow", u"Amount(Satang)", None))
+        self.label_endDate.setText(QCoreApplication.translate("MainWindow", u"End Date(year-month-day)", None))
+        self.label_title.setText(QCoreApplication.translate("MainWindow", u"Title", None))
+        self.lineEdit_title.setPlaceholderText(QCoreApplication.translate("MainWindow", u"*required", None))
+        self.groupBox_frequency.setTitle("")
+        self.rb_monthly.setText(QCoreApplication.translate("MainWindow", u"Monthly", None))
+        self.rb_annually.setText(QCoreApplication.translate("MainWindow", u"Annually", None))
+        self.label_frequency.setText(QCoreApplication.translate("MainWindow", u"Frequency:", None))
+        self.label_passiveMemo.setText(QCoreApplication.translate("MainWindow", u"Memo", None))
+        self.label_passiveError.setText("")
+        self.pb_passiveIncome.setText(QCoreApplication.translate("MainWindow", u"Income", None))
+        self.pb_passiveExpense.setText(QCoreApplication.translate("MainWindow", u"Expense", None))
         self.label_history.setText(QCoreApplication.translate("MainWindow", u"History", None))
         self.label_year.setText(QCoreApplication.translate("MainWindow", u"Year", None))
         self.label_month.setText(QCoreApplication.translate("MainWindow", u"Month(Optional)", None))
         self.label_search_error.setText("")
         self.pb_search.setText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.label_typeDetail.setText(QCoreApplication.translate("MainWindow", u"Income/ Expense", None))
-        self.label_dateDetail.setText(QCoreApplication.translate("MainWindow", u"Date", None))
-        self.label_memoDetail.setText(QCoreApplication.translate("MainWindow", u"Memo:", None))
-        self.label_moneyDetail.setText(QCoreApplication.translate("MainWindow", u"Money:", None))
-        self.label_categoryDetail.setText(QCoreApplication.translate("MainWindow", u"Category:", None))
-        self.label_moneyDetailAmount.setText("")
-        self.label_categoryDetailAmount.setText("")
         self.pb_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.pb_input.setText(QCoreApplication.translate("MainWindow", u"Input", None))
         self.pb_history.setText(QCoreApplication.translate("MainWindow", u"History", None))

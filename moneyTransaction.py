@@ -4,12 +4,23 @@ import persistent
 class MoneyTransaction(persistent.Persistent):
     def __init__(self, money, transactionType, category, memo):
         self.money = money
-        self.transactin_type = transactionType
+        self.transactionType = transactionType
         self.category = category
         self.memo = memo
 
     def __str__(self):
-        return self.transactin_type + ', Money: ' + str(self.money) + ', Category: ' + self.get_category() + ', Memo: ' + self.get_memo()
+        string = self.transactionType + ', Money: ' + str(self.money)
+        if(self.category != ''):
+            string += ', Category: ' + self.get_category()
+        if(self.memo != ''):
+            string += ', Memo: ' + self.get_memo()
+        return string
+
+    def get_money(self):
+        return self.money
+    
+    def get_transactionType(self):
+        return self.transactionType
 
     def get_category(self):
         return self.category

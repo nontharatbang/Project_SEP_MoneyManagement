@@ -8,6 +8,7 @@ import transaction
 import persistent
 import datetime
 import moneyTransaction
+import passiveMoney
 import money
 import user
 
@@ -24,11 +25,17 @@ class MoneyManagement(QMainWindow):
         self.connection = self.db.open()
         self.root = self.connection.root()
 
+        self.passiveStorage = ZODB.FileStorage.FileStorage('passive.fs')
+        self.passiveDb = ZODB.DB(self.passiveStorage)
+        self.passiveConnection = self.passiveDb.open()
+        self.passiveRoot = self.passiveConnection.root()
+
         #money management attr
         try:
-            self.user = root['user']
-            self.currentIncome = root['currentIncome']
-            self.currentExpense = root['currentExpense']
+            self.user = self.root['user']
+            self.balance = self.root['user'].get_balance()
+            self.currentIncome = self.root['currentIncome']
+            self.currentExpense = self.root['currentExpense']
         except:
             self.root['user'] = user.User('Admin')
             self.balance = self.root['user'].get_balance()
@@ -38,6 +45,8 @@ class MoneyManagement(QMainWindow):
             self.currentExpense = self.root['currentExpense']
 
         self.today = str(datetime.datetime.now())[:10]
+        self.update_passiveMoney()
+
         self.update_listWidget_today()
         self.ui.label_today.setText("Today: " + self.today)
         self.ui.label_balanceAmount.setText(str(self.balance))
@@ -52,9 +61,20 @@ class MoneyManagement(QMainWindow):
         #page 2
         self.ui.pb_income.clicked.connect(self.add_transaction)
         self.ui.pb_expense.clicked.connect(self.add_transaction)
+        self.ui.pb_addPassive.clicked.connect(self.change_page)
 
         #page 3
+        self.ui.dateEdit_endDate.setDate(QDateTime().currentDateTime().date())
+        self.ui.pb_passiveIncome.clicked.connect(self.add_passive)
+        self.ui.pb_passiveExpense.clicked.connect(self.add_passive)
+
+        #page 4
         self.ui.pb_search.clicked.connect(self.search_history)
+
+        #set background
+        self.setStyleSheet('background-image: url("C:/Users/BankYiSip/Desktop/SE_Lab/SEP/Project_SEP_MoneyManagement/stripe.png")')
+
+        print(self.passiveRoot.items())
 
     def change_page(self):
         sender = self.sender().objectName()
@@ -62,8 +82,10 @@ class MoneyManagement(QMainWindow):
             self.ui.stackedWidget.setCurrentIndex(0)
         elif(sender == 'pb_input'):
             self.ui.stackedWidget.setCurrentIndex(1)
+        elif(sender == 'pb_addPassive'):
+            self.ui.stackedWidget.setCurrentIndex(2)
         elif(sender == 'pb_history'):
-            self.ui.stackedWidget.setCurrentIndex(2)   
+            self.ui.stackedWidget.setCurrentIndex(3)   
     
     def add_transaction(self):
         self.ui.label_error.setText("")
@@ -75,27 +97,82 @@ class MoneyManagement(QMainWindow):
             memo = self.ui.textEdit_memo.toPlainText()
         except:
             self.ui.label_error.setText("Error: Invalid Input!")
+            return
         time = str(datetime.datetime.now())
         transaction_money = money.Money(baht, satang)
         if(sender == 'pb_income'):
-            transaction_type = 'income'
+            transaction_type = 'Income'
             self.update_current_income(transaction_money)
         elif(sender == 'pb_expense'):
-            transaction_type = 'expense'
+            transaction_type = 'Expense'
             self.update_current_expense(transaction_money)
         self.root[time] = moneyTransaction.MoneyTransaction(transaction_money, transaction_type, category, memo)
         self.update_balance(transaction_money, transaction_type)
         self.update_listWidget_today()
         # transaction.commit()
 
-        # print(self.root.items())
-        # print(str(self.root[time]))
+    def add_passive(self):
+        self.ui.label_passiveError.setText("")
+        sender = self.sender().objectName()
+        if(self.ui.lineEdit_title.text() == ''):
+            self.ui.label_passiveError.setText("Error: Please enter the Title!")
+            return
+        if(not self.ui.rb_monthly.isChecked() and not self.ui.rb_annually.isChecked()):
+            self.ui.label_passiveError.setText("Error: Please choose the frequency!")
+            return
+        try:
+            title = self.ui.lineEdit_title.text()
+            baht = int(self.ui.lineEdit_passiveBaht.text())
+            satang = int(self.ui.lineEdit_passiveSatang.text())
+            category = self.ui.lineEdit_passiveCategory.text()
+            memo = self.ui.textEdit_passiveMemo.toPlainText()
+            if(self.ui.rb_monthly.isChecked()):
+                frequency = self.ui.rb_monthly.text()
+            else:
+                frequency = self.ui.rb_annually.text()
+            endDate = self.ui.dateEdit_endDate.date().toString('yyyy-MM-dd')
+        except:
+            self.ui.label_passiveError.setText("Error: Invalid Input!")
+            return
+        
+        passive_money = money.Money(baht, satang)
+        if(sender == 'pb_passiveIncome'):
+            transaction_type = 'Income'
+        elif(sender == 'pb_passiveExpense'):
+            transaction_type = 'Expense'
+        
+        pMoney = passiveMoney.PassiveMoney(passive_money, transaction_type, category, memo, title, endDate, frequency)
+        self.passiveRoot[pMoney.get_title()] = pMoney
+        self.update_passive_continue(pMoney.get_title())
+
+    def update_passive_continue(self, key):
+        transaction_money = self.passiveRoot[key].get_money()
+        transaction_type = self.passiveRoot[key].get_transactionType()
+        category = self.passiveRoot[key].get_category()
+        memo = self.passiveRoot[key].get_memo()
+
+        print('In update passive continue')
+        print(transaction_money)
+        print(transaction_type)
+        print(category)
+        print(memo)
+
+        if(transaction_type == 'Income'):
+            self.update_current_income(transaction_money)
+        elif(transaction_type == 'Expense'):
+            self.update_current_expense(transaction_money)
+
+        time = str(datetime.datetime.now())
+        self.root[time] = moneyTransaction.MoneyTransaction(transaction_money, transaction_type, category, memo)
+        self.update_balance(transaction_money, transaction_type)
+        self.update_listWidget_today()
     
-    def update_balance(self, money, transaction_type): #transaction type = negative/positive
-        if(transaction_type == 'income'): 
+    def update_balance(self, money, transaction_type): #transaction type = income/expense
+        if(transaction_type == 'Income'): 
             self.root['user'].get_balance().deposit(money)
-        elif(transaction_type == 'expense'): 
+        elif(transaction_type == 'Expense'): 
             self.root['user'].get_balance().withdraw(money)
+        
         self.balance = self.root['user'].get_balance()
         self.ui.label_balanceAmount.setText(str(self.balance))
 
@@ -107,7 +184,7 @@ class MoneyManagement(QMainWindow):
     def update_current_expense(self, money):
         self.currentExpense.withdraw(money)
         self.root['currentExpense'] = self.currentExpense
-        self.ui.label_currentExpenseAmount.setText(str(self.currentExpense)[1:])
+        self.ui.label_currentExpenseAmount.setText(str(self.currentExpense))
 
     def update_listWidget_today(self):
         self.ui.listWidget_today.clear()
@@ -115,13 +192,36 @@ class MoneyManagement(QMainWindow):
             if(key[:10] == self.today):
                 self.ui.listWidget_today.addItem(str(self.root[key]))
 
+    def update_passiveMoney(self):
+        
+        print('in update_passiveMoney')
+        print(self.passiveRoot.items())
+        delKey = []
+        for key in self.passiveRoot:
+            if(self.passiveRoot[key].get_endDate() == self.today):
+                self.delList.append(key)
+
+        print(delKey)
+        for key in delKey:
+            del self.passiveRoot[key]
+        delKey.clear()
+        print('after clear')
+        print(delKey)
+        print(self.passiveRoot.items())
+
+        for pMoney in self.passiveRoot:
+            print('looping for update nextDate')
+            if(self.passiveRoot[pMoney].get_nextDate() == self.today):
+                print('how da heck did u get inside')
+                self.passiveRoot[pMoney].update_nextDate()
+                self.add_passive_continue(pMoney)
+
     def search_history(self):
         self.ui.listWidget_history.clear()
         self.ui.label_search_error.setText("")
         year = self.ui.lineEdit_year.text()
         month = self.ui.lineEdit_month.text()
         
-        print(self.root.items())
         if((month.isnumeric() or month == '') and year.isnumeric()): 
             pass
         else:
@@ -142,8 +242,6 @@ class MoneyManagement(QMainWindow):
                 else:
                     if(key[:4].isnumeric()):
                         self.ui.label_search_error.setText('Information not found!')
-        
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
@@ -152,4 +250,4 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
         
-    
+###### dont forget to add transaction.commit()
