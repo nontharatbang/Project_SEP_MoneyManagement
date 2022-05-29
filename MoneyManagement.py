@@ -40,6 +40,8 @@ class MoneyManagement(QMainWindow):
             self.currentExpense = self.root['currentExpense']
 
         self.today = str(datetime.datetime.now())[:10]
+        self.keytemp = [] #to store the renewal of the passive money
+        self.valuetemp = [] #to store the value of the renewal of the passive money
         self.update_passiveMoney()
 
         self.update_listWidget_today()
@@ -68,6 +70,10 @@ class MoneyManagement(QMainWindow):
 
         #set background
         self.setStyleSheet('background-image: url("stripe.png")')
+
+        
+
+        print(self.root.items())
 
     def change_page(self):
         sender = self.sender().objectName()
@@ -156,10 +162,16 @@ class MoneyManagement(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(0)
 
     def update_passive_continue(self, key):
+        self.root[key].set_status(0)
+        self.root[key].update_nextDate()
+
         transaction_money = self.root[key].get_money()
         transaction_type = self.root[key].get_transactionType()
         category = self.root[key].get_category()
         memo = self.root[key].get_memo()
+        title = self.root[key].get_title()
+        endDate = self.root[key].get_endDate()
+        frequency = self.root[key].get_frequency()
 
         if(transaction_type == 'Income'):
             self.update_current_income(transaction_money)
@@ -167,10 +179,10 @@ class MoneyManagement(QMainWindow):
             self.update_current_expense(transaction_money)
 
         time = str(datetime.datetime.now())
-        self.root[time] = moneyTransaction.MoneyTransaction(transaction_money, transaction_type, category, memo)
+        self.keytemp.append(time)
+        self.valuetemp.append(passiveMoney.PassiveMoney(transaction_money, transaction_type, category, memo, title, endDate, frequency))
         self.update_balance(transaction_money, transaction_type)
         self.update_listWidget_today()
-        transaction.commit()
     
     def update_balance(self, money, transaction_type): #transaction type = income/expense
         if(transaction_type == 'Income'): 
@@ -198,22 +210,31 @@ class MoneyManagement(QMainWindow):
                 self.ui.listWidget_today.addItem(str(self.root[key]))
 
     def update_passiveMoney(self):
+        print(self.root.items())
         for key in self.root:
             try:
                 if(self.root[key].get_status() == 1):
                     if(self.root[key].get_endDate() == self.today):
                         self.root[key].set_status(0)
-                    elif(self.root[key].get_nextDate() == self.today):
-                        self.root[key].update_nextDate()
-                        self.add_passive_continue(key)
+                    if(str(self.root[key].get_nextDate()) == str(self.today)):
+                        self.update_passive_continue(key)
             except:
                 pass
+
+        print(self.keytemp)
+        print(self.valuetemp)
+        for index in range (len(self.keytemp)):
+            
+            self.root[self.keytemp[index]] = self.valuetemp[index]
+        self.keytemp.clear()
+        self.valuetemp.clear()
 
     def search_history(self):
         self.ui.listWidget_history.clear()
         self.ui.label_search_error.setText("")
         year = self.ui.lineEdit_year.text()
         month = self.ui.lineEdit_month.text()
+        found = 0
         
         if((month.isnumeric() or month == '') and year.isnumeric()): 
             pass
@@ -225,16 +246,14 @@ class MoneyManagement(QMainWindow):
            for key in self.root:
                 if(key[:4] == year):
                     self.ui.listWidget_history.addItem(key[:19] + ' ' + str(self.root[key]))
-                else:
-                    if(key[:4].isnumeric()):
-                        self.ui.label_search_error.setText('Information not found!')
+                    found += 1
         else:
             for key in self.root:
                 if(key[:7] == (year + '-' + month) or key[:7] == (year + '-0' + month)):
                     self.ui.listWidget_history.addItem(key[:19] + ' ' + str(self.root[key]))
-                else:
-                    if(key[:4].isnumeric()):
-                        self.ui.label_search_error.setText('Information not found!')
+                    found += 1
+        if(found == 0):
+            self.ui.label_search_error.setText('Information not found!')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
