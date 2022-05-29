@@ -11,6 +11,7 @@ class PassiveMoney(moneyTransaction.MoneyTransaction):
         self.frequency = frequency
         self.currentDate = time
         self.nextDate = self.calculate_nextDate(self.currentDate)
+        self.status = 1
 
     def get_title(self):
         return self.title
@@ -26,6 +27,12 @@ class PassiveMoney(moneyTransaction.MoneyTransaction):
 
     def get_nextDate(self):
         return self.nextDate
+    
+    def get_status(self):
+        return self.status
+    
+    def set_status(self, newStatus):
+        self.status = newStatus
 
     def calculate_nextDate(self, currentDate):
         self.nextDate = self.currentDate + relativedelta.relativedelta(months=1)
